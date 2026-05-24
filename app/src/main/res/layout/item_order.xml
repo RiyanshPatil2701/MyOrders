@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="12dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imgTruck"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:src="@drawable/truck_small"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ 229.0"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Four Wheeler"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintStart_toEndOf="@id/imgTruck"
+            app:layout_constraintEnd_toStartOf="@id/txtPrice"
+            app:layout_constraintTop_toTopOf="@id/imgTruck"/>
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05 Feb, 4:46 PM"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/txtVehicle"
+            app:layout_constraintTop_toBottomOf="@id/txtVehicle"/>
+
+        <TextView
+            android:id="@+id/txtOrderId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="  |  Order ID: #ORD12345"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/txtDate"
+            app:layout_constraintEnd_toStartOf="@id/imgMore"
+            app:layout_constraintTop_toTopOf="@id/txtDate"
+            app:layout_constraintBottom_toBottomOf="@id/txtDate"/>
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_more"
+            android:padding="4dp"
+            app:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPrice"
+            android:layout_marginTop="4dp"/>
+
+        <ImageView
+            android:id="@+id/imgPickup"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_pickup"
+            app:layout_constraintStart_toStartOf="@id/txtDate"
+            app:layout_constraintTop_toBottomOf="@id/txtDate"/>
+
+        <TextView
+            android:id="@+id/txtPickup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="741, Gumanwara"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/imgPickup"
+            app:layout_constraintTop_toTopOf="@id/imgPickup"
+            app:layout_constraintEnd_toStartOf="@id/imgMore"/>
+
+        <ImageView
+            android:id="@+id/imgDrop"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_drop"
+            app:layout_constraintStart_toStartOf="@id/imgPickup"
+            app:layout_constraintTop_toBottomOf="@id/txtPickup"/>
+
+        <TextView
+            android:id="@+id/txtDrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="00, Main Rd, Shivaji Nagar, Jhansi,\nUttar Pradesh 284001, India"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/imgDrop"
+            app:layout_constraintTop_toTopOf="@id/imgDrop"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="txtDrop,txtCancelled" />
+
+        <TextView
+            android:id="@+id/txtCancelled"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_cancelled_chip"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="CANCELLED"
+            android:textColor="#D14B4B"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtDrop"/>
+
+        <TextView
+            android:id="@+id/btnBookAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_book_again"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="Book Again"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/txtCancelled"
+            app:layout_constraintTop_toTopOf="@id/txtCancelled"/>
+
+        <LinearLayout
+            android:id="@+id/btnInvoice"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_invoice_button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintEnd_toStartOf="@id/btnBookAgain"
+            app:layout_constraintTop_toTopOf="@id/btnBookAgain"
+            app:layout_constraintBottom_toBottomOf="@id/btnBookAgain">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_download"
+                app:tint="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Invoice"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
